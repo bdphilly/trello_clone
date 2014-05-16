@@ -25,7 +25,7 @@ Trellino.Views.BoardForm = Backbone.View.extend ({
 		newBoard.save({}, {
 			success: function () {
 				Trellino.Collections.boards.add(newBoard);
-				Backbone.history.navigate("/", { trigger: true });
+				Backbone.history.navigate("/boards/" + newBoard.id, { trigger: true });
 			}
 		});
 	}
