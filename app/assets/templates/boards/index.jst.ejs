@@ -1,0 +1,7 @@
+<h1>This be some tasty Boards</h1>
+
+<ul>
+	<% boards.each(function(board) { %>
+		<li><%= board.escape('title') %></li>
+	<% }); %>
+</ul>

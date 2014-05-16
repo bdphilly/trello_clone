@@ -5,10 +5,11 @@ window.Trellino = {
   Routers: {},
   initialize: function () {
   	new Trellino.Routers.router();
-  	Backbone.history.start();
+  	Trellino.Collections.boards = new Trellino.Collections.Boards();
+    Backbone.history.start();
   }
 };
 
 $(document).ready(function () {
 	Trellino.initialize();
-})
+});
