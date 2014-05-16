@@ -10,7 +10,7 @@ Trellino.Views.BoardShow = Backbone.View.extend ({
 		var renderedContent = this.template({ board: this.model });
 		this.$el.html(renderedContent);
 
-		return renderedContent;
+		return this;
 	},
 
 	

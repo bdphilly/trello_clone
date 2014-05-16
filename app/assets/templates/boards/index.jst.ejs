@@ -2,6 +2,9 @@
 
 <ul>
 	<% boards.each(function(board) { %>
-		<li><%= board.escape('title') %></li>
+		<li>
+			<a href="#/boards/<%= board.escape("id") %>"> 
+				<%= board.escape('title') %>
+		</li>
 	<% }); %>
 </ul>

@@ -3,7 +3,6 @@ Trellino.Views.BoardsIndex = Backbone.View.extend({
 
 	initialize: function () {
 		this.listenTo(this.collection, "sync add remove", this.render);
-
 	},
 
 	render: function () {
@@ -12,4 +11,5 @@ Trellino.Views.BoardsIndex = Backbone.View.extend({
 
 		return this;
 	},
+	
 });
