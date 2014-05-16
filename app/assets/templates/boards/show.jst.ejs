@@ -1,7 +1,9 @@
 <h1>A fancy board</h1>
 
 <h3><%= board.escape('title') %></h3>
-
+<% board.lists().each(function(list) { %>
+	<h4><%= list.escape('title') %></h4>
+<% }) %>
 <br><br>
 
 
