@@ -13,9 +13,10 @@ Trellino.Views.BoardMembers = Backbone.View.extend ({
 	submit: function (event) {
 		event.preventDefault();
 
-		var params = $(event.currentTarget).serializeJSON()["newMemberEmail"];
+		var params = $(event.currentTarget).serializeJSON();
+		var memberData = params["newMemberEmail"];
 		this.model.fetch();
-		this.model.save(params, {
+		this.model.save(memberData, {
 			success: function () {
 				alert('success');
 			}

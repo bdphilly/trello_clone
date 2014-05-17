@@ -6,15 +6,15 @@ Trellino.Models.List = Backbone.Model.extend ({
 			delete jsonResp.cards;
 		}
 		return jsonResp;
-	}
+	},
 
 	cards: function () {
 		if (!this._cards) {
-			cards._cards = new Trellino.Collections.Cards([], {
-				cards: this
+			this._cards = new Trellino.Collections.Cards([], {
+				card: this
 			});
 		}
 		return this._cards
-	}
+	},
 
 });

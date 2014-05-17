@@ -5,7 +5,6 @@ Trellino.Collections.Boards = Backbone.Collection.extend ({
 
 	getOrFetch: function(id) {
 		var boards = this;
-
 		var board;
 		if (board = this.get(id)) {
 			board.fetch();

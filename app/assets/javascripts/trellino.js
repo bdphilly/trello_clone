@@ -4,7 +4,9 @@ window.Trellino = {
   Views: {},
   Routers: {},
   initialize: function () {
-  	new Trellino.Routers.router();
+  	Trellino.Routers.router = new Trellino.Routers.router({
+      $rootEl: $("#content") 
+    });
   	Trellino.Collections.boards = new Trellino.Collections.Boards();
     Backbone.history.start();
   }

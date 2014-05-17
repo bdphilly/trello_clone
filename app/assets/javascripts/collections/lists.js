@@ -1,7 +1,7 @@
 Trellino.Collections.Lists = Backbone.Collection.extend ({
 	model: Trellino.Models.List,
 	
-	initialize: function(models, options){
+	initialize: function (models, options) {
 		this.board = options.board;
 	},
 
@@ -16,7 +16,7 @@ Trellino.Collections.Lists = Backbone.Collection.extend ({
 		if (list = this.get(id)) {
 			list.fetch();
 		} else {
-			list = new Trellino.Models.Board({ id: id});
+			list = new Trellino.Models.List({ id: id});
 			list.fetch({
 				success: function () { lists.add(list) }
 			});

@@ -1,7 +1,7 @@
 Trellino.Collections.Cards = Backbone.Collection.extend ({
-	model: Trellino.Collections.Card,
+	model: Trellino.Models.Card,
 
-	initialize: function () (models, options) {
+	initialize: function (models, options) {
 		this.list = options.list;
 	},
 
@@ -16,7 +16,7 @@ Trellino.Collections.Cards = Backbone.Collection.extend ({
 		if (card = this.get(id)) {
 			card.fetch();
 		} else {
-			card = new Trellino.Models.Board({ id: id});
+			card = new Trellino.Models.Card({ id: id});
 			card.fetch({
 				success: function () { cards.add(card) }
 			});
@@ -24,6 +24,5 @@ Trellino.Collections.Cards = Backbone.Collection.extend ({
 
 		return card;
 	},
-
 
 });

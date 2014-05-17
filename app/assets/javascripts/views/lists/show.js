@@ -13,5 +13,4 @@ Trellino.Views.Show = Backbone.View.extend ({
 		return this;
 	},
 
-
 });
