@@ -1,5 +1,6 @@
 Trellino.Collections.Lists = Backbone.Collection.extend ({
 	model: Trellino.Models.List,
+	
 	initialize: function(models, options){
 		this.board = options.board;
 	},

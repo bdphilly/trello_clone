@@ -1,9 +1,9 @@
 Trellino.Views.BoardForm = Backbone.View.extend ({
 	template: JST["boards/form"],
 
-	initialize: function () {
-		this.subviews = [];
-	},
+	// initialize: function () {
+	// 	this.subviews = [];
+	// },
 
 	events: { 
 		"submit form": "create" 
@@ -16,12 +16,12 @@ Trellino.Views.BoardForm = Backbone.View.extend ({
 		return this;
 	},
 
-	leave: function () {
-		this.subviews.forEach(function(subview) {
-			subview.leave();
-		})
-		this.remove();
-	},
+	// leave: function () {
+	// 	this.subviews.forEach(function(subview) {
+	// 		subview.leave();
+	// 	})
+	// 	this.remove();
+	// },
 
 	create: function (event) {
 		event.preventDefault();
@@ -35,5 +35,5 @@ Trellino.Views.BoardForm = Backbone.View.extend ({
 				Backbone.history.navigate("/boards/" + newBoard.id, { trigger: true });
 			}
 		});
-	}
+	},
 });

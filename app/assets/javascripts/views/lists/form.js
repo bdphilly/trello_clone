@@ -11,9 +11,9 @@ Trellino.Views.ListForm = Backbone.View.extend ({
 		return this;
 	},
 
-	leave: function () {
-		this.remove;
-	},
+	// leave: function () {
+	// 	this.remove;
+	// },
 
 	create: function (event) {
 		event.preventDefault();
@@ -26,6 +26,6 @@ Trellino.Views.ListForm = Backbone.View.extend ({
 		var that = this;
 
 		this.model.lists().create(newList);
-	}
+	},
 
 });
