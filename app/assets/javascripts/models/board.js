@@ -3,7 +3,7 @@ Trellino.Models.Board = Backbone.Model.extend ({
 
 	parse: function (jsonResp) {
 		if (jsonResp.lists) {
-			this.lists().set(jsonResp.lists)
+			this.lists().set(jsonResp.lists);
 			delete jsonResp.lists;
 		}
 		return jsonResp;

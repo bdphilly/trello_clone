@@ -7,7 +7,6 @@ Trellino.Collections.Lists = Backbone.Collection.extend ({
 
 	url: function () {
 		return "api/boards/" + this.board.id + "/lists"; 
-		// return this.board.url() + "/lists";
 	},
 
 	getOrFetch: function(id) {
