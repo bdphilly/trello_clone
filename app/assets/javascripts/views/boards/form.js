@@ -1,12 +1,12 @@
 Trellino.Views.BoardForm = Backbone.View.extend ({
 	template: JST["boards/form"],
 
-	// initialize: function () {
-	// 	this.listenTo()
-	// },
+	initialize: function () {
+		this.subviews = [];
+	},
 
 	events: { 
-		"submit form": "submit" 
+		"submit form": "create" 
 	},
 
 	render: function () {
@@ -16,7 +16,14 @@ Trellino.Views.BoardForm = Backbone.View.extend ({
 		return this;
 	},
 
-	submit: function (event) {
+	leave: function () {
+		this.subviews.forEach(function(subview) {
+			subview.leave();
+		})
+		this.remove();
+	},
+
+	create: function (event) {
 		event.preventDefault();
 
 		var params = $(event.currentTarget).serializeJSON()["board"];
