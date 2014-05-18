@@ -16,6 +16,7 @@ Trellino.Views.ListForm = Backbone.View.extend ({
 	// },
 
 	create: function (event) {
+
 		event.preventDefault();
 
 		var params = $(event.currentTarget).serializeJSON()["list"];

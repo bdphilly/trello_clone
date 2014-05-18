@@ -13,12 +13,10 @@ Trellino.Views.CardForm = Backbone.View.extend ({
 
 	create: function (event) {
 		event.preventDefault();
-
 		var params = $(event.currentTarget).serializeJSON()["card"];
-		var newCard = new Trellino.Model.Card(params);
+		var newCard = new Trellino.Models.Card(params);
 
 		newCard.set("list_id", this.model.id);
 		this.model.cards().create(newCard);
 	},
-
 })

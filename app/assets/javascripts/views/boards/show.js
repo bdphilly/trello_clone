@@ -3,21 +3,35 @@ Trellino.Views.BoardShow = Backbone.CompositeView.extend ({
 
 	initialize: function () {
 		this.listenTo(this.model, "sync add remove", this.render);
-		this.listenTo(this.model.lists(), "sync add remove", this.render);
+		this.listenTo(this.model.lists(), "add", this.addList);
+		this.listenTo(this.model.lists(), "remove", this.removeList)
 
-		var listView = new Trellino.Views.ListShow({ model: this.model });
-		this.addSubview(".lists-new", listView);
+		var newListView = new Trellino.Views.ListForm({ model: this.model });
+		
+		this.model.lists().each(this.addList.bind(this));
+		this.addSubview(".lists-new", newListView);
+	},
 
-		// this.model.lists().each(this.addList.bind(this));
+	addList: function (list) {
+		var listShow = new Trellino.Views.ListShow({ model: list});
+		this.addSubview(".lists", listShow);
+	},
+
+	removeList: function (list) {
+		var subview = _.find(
+			this.subviews(".lists"),
+			function (subview) {
+				return subview.model === list;
+			}
+		);
+
+		this.removeSubview(".lists", subview);
 	},
 
 	render: function () {
 		var renderedContent = this.template({ board: this.model });
 		this.$el.html(renderedContent);
 		this.attachSubviews();
-
-		var newListForm = new Trellino.Views.ListForm({ model: this.model });
-		this.$el.append(newListForm.render().$el);
 
 		var addMember = new Trellino.Views.BoardMembers({ model: this.model });
 		this.$el.append(addMember.render().$el);

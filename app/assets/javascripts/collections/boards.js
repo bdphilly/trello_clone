@@ -1,7 +1,7 @@
 Trellino.Collections.Boards = Backbone.Collection.extend ({
 	model: Trellino.Models.Board,
 
-	url: "/api/boards",
+	url: "api/boards",
 
 	getOrFetch: function(id) {
 		var boards = this;

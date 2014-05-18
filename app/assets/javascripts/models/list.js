@@ -1,5 +1,10 @@
 Trellino.Models.List = Backbone.Model.extend ({
 	// urlRoot: "/api/lists",
+
+	// initialize: function (models, options) {
+	// 	this.board = options.board;
+	// },
+
 	parse: function (jsonResp) {
 		if (jsonResp.cards) {
 			this.cards().set(jsonResp.cards);
@@ -11,7 +16,7 @@ Trellino.Models.List = Backbone.Model.extend ({
 	cards: function () {
 		if (!this._cards) {
 			this._cards = new Trellino.Collections.Cards([], {
-				card: this
+				list: this
 			});
 		}
 		return this._cards
