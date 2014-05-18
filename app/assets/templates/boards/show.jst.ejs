@@ -2,12 +2,10 @@
 
 Board Title:
 <h3><%= board.escape('title') %></h3>
-<% board.lists().each(function(list) { %>
-	<h4><%= list.escape('title') %>
-			<%= list.escape('rank') %>
-	</h4>
+<br>
+<h1>Some Lists</h1>
 
-<% }) %>
-<br><br>
+<ul class="list"></ul>
+<div class="list-new"></div>
 
-<a href="#">The Boards</a>
+<a href="#">Back to the Boards</a>
