@@ -6,7 +6,7 @@
 			<a href="#/boards/<%= board.escape("id") %>"> 
 				<%= board.escape('title') %>
 			</a>
-				<button class="destroy" data-id="<%= board.id %>">Obliterate</button>
+				<button class="destroy btn btn-danger" data-id="<%= board.id %>">Obliterate</button>
 		</li>
 	<% }) %>
 </ul>

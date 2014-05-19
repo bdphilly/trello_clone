@@ -34,3 +34,28 @@
 ul {
     list-style-type: none;
 }
+
+ul.lists {
+	white-space: nowrap;
+	overflow-x: auto;
+	overflow-y: hidden;
+	height: 500px;
+}
+
+.list {
+	width: 300px;
+	display: inline-block;
+	vertical-align: top;
+	margin-left: 10px;
+	margin-right: 10px;
+
+}
+
+.cards {
+	padding: 0 0 0 0;
+}
+
+.card-detail {
+	align: left;
+}
+

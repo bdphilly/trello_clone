@@ -1,11 +1,11 @@
-<div class="panel panel-primary list-detail col-md-4" style="float: left">
+<div class="panel panel-primary list-detail" style="float: left">
 	<div class="panel-heading">
 		<h4>
 			<span class="list-title">
 				<%= list.escape('title') %>
-				<button class="destroy hidden" data-id="<%= list.id %>" type="button">Delete!</button>
+				<button class="destroy hidden btn btn-danger" data-id="<%= list.id %>" type="button">Delete!</button>
 			</span>
-		</h2>
+		</h4>
 	</div>
 	<div class="panel-body">
 		<ul class="card-list cards" data-id="<%= list.id %>">
