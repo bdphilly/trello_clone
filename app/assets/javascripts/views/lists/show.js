@@ -1,6 +1,11 @@
 Trellino.Views.ListShow = Backbone.CompositeView.extend ({
 	template: JST["lists/show"],
 
+	events: { 'click button.destroy': 'destroyList',
+						'mouseover .list-title': 'addDeleteButton',
+						'mouseleave .list-title': 'removeDeleteButton'
+					 },
+
 	initialize: function (cardModel) {
 		this.listenTo(this.model, "sync add remove", this.render);
 		this.listenTo(this.model.cards(), "add", this.addCard);
@@ -33,6 +38,24 @@ Trellino.Views.ListShow = Backbone.CompositeView.extend ({
 		this.attachSubviews();
 
 		return this;
+	},
+
+	destroyList: function(event) {
+		event.preventDefault();
+	
+		this.model.destroy();
+	},
+
+	addDeleteButton: function (event) {
+		event.preventDefault();
+
+		$(event.target).find('button.destroy').removeClass('hidden');
+	},
+
+	removeDeleteButton: function (event) {
+		event.preventDefault();
+
+		$(event.target).find('button.destroy').addClass('hidden');
 	},
 
 });

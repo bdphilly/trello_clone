@@ -1,7 +1,12 @@
-<div class="col-md-4">
+<div class="list-detail col-md-4">
 	<div style="float: left">
 		<div class="panel panel-default">	
-			<h3><%= list.escape('title') %></h3>
+			<h3>
+				<span class="list-title">
+					<%= list.escape('title') %>
+					<button class="destroy hidden" data-id="<%= list.id %>" type="button">Delete!</button>
+				</span>
+			</h3>
 			<div class="cards"></div>
 			<div class="cards-new"></div>
 		</div>
