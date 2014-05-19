@@ -1,14 +1,17 @@
-<div class="list-detail col-md-4">
-	<div style="float: left">
-		<div class="panel panel-default">	
-			<h3>
-				<span class="list-title">
-					<%= list.escape('title') %>
-					<button class="destroy hidden" data-id="<%= list.id %>" type="button">Delete!</button>
-				</span>
-			</h3>
-			<div class="cards"></div>
-			<div class="cards-new"></div>
-		</div>
+<div class="panel panel-primary list-detail col-md-4" style="float: left">
+	<div class="panel-heading">
+		<h2 class="panel-title">
+			title
+			<span class="list-title">
+				<%= list.escape('title') %>
+				<button class="destroy hidden" data-id="<%= list.id %>" type="button">Delete!</button>
+			</span>
+		</h2>
+	</div>
+	<!-- <div class="panel-body"> -->
+		<div class="panel-body cards"></div>
+	<!-- </div> -->
+	<div class="panel-footer">
+		<div class="cards-new"></div>
 	</div>
 </div>
