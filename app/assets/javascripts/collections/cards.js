@@ -10,6 +10,10 @@ Trellino.Collections.Cards = Backbone.Collection.extend ({
 		return "api/lists/" + this.list.id + "/cards";
 	},
 
+	comparator: function (card) {
+		return card.get('rank');
+	},
+
 	getOrFetch: function(id) {
 		var cards = this;
 

@@ -1,8 +1,6 @@
 Trellino.Views.ListShow = Backbone.CompositeView.extend ({
 	template: JST["lists/show"],
 
-	tagName: 'li',
-
 	initialize: function (cardModel) {
 		this.listenTo(this.model, "sync add remove", this.render);
 		this.listenTo(this.model.cards(), "add", this.addCard);
