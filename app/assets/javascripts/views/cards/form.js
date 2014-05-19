@@ -5,7 +5,7 @@ Trellino.Views.CardForm = Backbone.View.extend ({
 
 	render: function () {
 		var renderedContent = this.template({ list: this.model });
-
+		this.$el.empty();
 		this.$el.html(renderedContent);
 
 		return this;
@@ -19,5 +19,6 @@ Trellino.Views.CardForm = Backbone.View.extend ({
 		newCard.set("rank", this.model.cards().length);
 		newCard.set("list_id", this.model.id);
 		this.model.cards().create(newCard);
+		this.render();
 	},
 })

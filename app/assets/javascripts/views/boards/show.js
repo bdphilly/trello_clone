@@ -36,6 +36,9 @@ Trellino.Views.BoardShow = Backbone.CompositeView.extend ({
 		var addMember = new Trellino.Views.BoardMembers({ model: this.model });
 		this.$el.append(addMember.render().$el);
 
+		$(".cards").sortable();
+		$(".lists").sortable();
+
 		return this;
 	},
 

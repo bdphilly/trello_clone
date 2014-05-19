@@ -24,6 +24,7 @@ Trellino.Views.ListForm = Backbone.View.extend ({
 
 		newList.set("board_id", this.model.id);
 		this.model.lists().create(newList);
+		this.render();
 	},
 
 });
