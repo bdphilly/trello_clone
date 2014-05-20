@@ -13,7 +13,15 @@
  *= require_tree .
  */
 
+$panel-bg: #d755a5;
+
 @import "bootstrap";
+
+
+
+.brand-primary {
+	color: #d755a5;
+}
 
 .hidden {
 	display: none;
@@ -57,5 +65,9 @@ ul.lists {
 
 .card-detail {
 	align: left;
+}
+
+.dragged {
+	background-color: #aaa !important;
 }
 

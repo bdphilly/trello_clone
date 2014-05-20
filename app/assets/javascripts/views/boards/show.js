@@ -37,8 +37,16 @@ Trellino.Views.BoardShow = Backbone.CompositeView.extend ({
 		this.$el.append(addMember.render().$el);
 
 		$(".cards").sortable({
-			stop: function () {
-				// alert('moved!');
+			start: function (event, ui) {
+				$(ui.item.find(".card-detail")).toggleClass('dragged');
+			},
+
+			receive: function (event, ui) {
+
+			},
+
+			stop: function (event, ui) {
+				$(ui.item.find(".card-detail")).toggleClass('dragged');
 			}
 
 		});
@@ -136,15 +144,3 @@ Trellino.Views.BoardShow = Backbone.CompositeView.extend ({
 //         });
 //     }
 // });
-
-
-
-
-
-
-
-
-
-
-
-
