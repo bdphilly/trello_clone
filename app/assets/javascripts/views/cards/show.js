@@ -6,6 +6,7 @@ Trellino.Views.CardShow = Backbone.View.extend ({
 	attributes: function () {
 		return {
 			id: this.model.id,
+			list_id: this.model.list_id,
 			rank: this.model.rank
 		}
 	},

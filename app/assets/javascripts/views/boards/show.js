@@ -57,7 +57,10 @@ Trellino.Views.BoardShow = Backbone.CompositeView.extend ({
 
 			update: function (event, ui) {
 				var listIdArray = $(event.target).sortable('toArray', {attribute: 'id'});
-				that.updateListRanks(listIdArray);
+				// var list = ui.item.attr('id');
+				var listId = $(event.target).data('id')
+				// debugger
+				that.updateCardRanks(listIdArray, listId);
 
 			},
 
@@ -71,17 +74,14 @@ Trellino.Views.BoardShow = Backbone.CompositeView.extend ({
 
 			receive: function (event, ui) {
 				
-
 			},
 
 			stop: function (event, ui) {
-				// debugger
 				$(ui.item.find(".list-detail")).toggleClass('dragged');
 			},
 
 			update: function (event, ui) {
 				var listIdArray = $(event.target).sortable('toArray', {attribute: 'id'});
-				// debugger
 				that.updateListRanks(listIdArray);
 			},
 
@@ -94,11 +94,22 @@ Trellino.Views.BoardShow = Backbone.CompositeView.extend ({
 		var rank = 0;
 		var that = this;
 		_.each(ids, function (id) {
-			var board = that.model;
 			var list = that.model.lists().get(id);
 			list.save({ 'rank': rank });
 			rank ++;
 		})
+	},
+
+	updateCardRanks: function(ids, listId) {
+		var rank = 0;
+		var that = this;
+		var list = that.model.lists().get(listId);
+		_.each(ids, function (id) {
+			var card = list.cards().get(id);
+			card.set({ 'rank': rank });
+			rank ++;
+		})
+		list.save();
 	},
 
 });
