@@ -8,7 +8,12 @@ Trellino.Views.ListShow = Backbone.CompositeView.extend ({
 
 	tagName: 'li',
 
-	attributes: {class: 'list'},
+	attributes: function () {
+		return {
+			class: 'list', 
+			id: this.model.id
+		}
+	},
 
 	initialize: function (cardModel) {
 		this.listenTo(this.model, "sync add remove", this.render);
@@ -60,7 +65,6 @@ Trellino.Views.ListShow = Backbone.CompositeView.extend ({
 		this.$el.html(renderedContent);
 
 		this.attachSubviews();
-
 		return this;
 	},
 

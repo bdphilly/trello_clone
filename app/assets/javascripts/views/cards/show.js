@@ -3,6 +3,13 @@ Trellino.Views.CardShow = Backbone.View.extend ({
 
 	tagName: 'li',
 
+	attributes: function () {
+		return {
+			id: this.model.id,
+			rank: this.model.rank
+		}
+	},
+
 	initialize: function() {
 		this.listenTo(this.model, "sync add remove change", this.render);
 	},

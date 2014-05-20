@@ -27,14 +27,6 @@ $panel-bg: #d755a5;
 	display: none;
 }
 
-.ui-state-default {
-	
-}
-
-.exclude-me {
-	
-}
-
 .ui-sortable-placeholder {
 	background-color: #ccc;
 }
@@ -47,7 +39,6 @@ ul.lists {
 	white-space: nowrap;
 	overflow-x: auto;
 	overflow-y: hidden;
-	height: 500px;
 }
 
 .list {
@@ -68,6 +59,6 @@ ul.lists {
 }
 
 .dragged {
+	font-color: yellow;
 	background-color: #aaa !important;
 }
-

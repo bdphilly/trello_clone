@@ -16,7 +16,7 @@ Trellino.Views.CardForm = Backbone.View.extend ({
 		var params = $(event.currentTarget).serializeJSON()["card"];
 		var newCard = new Trellino.Models.Card(params);
 
-		newCard.set("rank", this.model.cards().length + 1);
+		newCard.set("rank", this.model.cards().length);
 		newCard.set("list_id", this.model.id);
 		this.model.cards().create(newCard);
 		this.render();

@@ -36,24 +36,65 @@ Trellino.Views.BoardShow = Backbone.CompositeView.extend ({
 		var addMember = new Trellino.Views.BoardMembers({ model: this.model });
 		this.$el.append(addMember.render().$el);
 
-		$(".cards").sortable({
+		var that = this;
+
+		this.$(".cards").sortable({
+			connectWith: ".cards",
+
 			start: function (event, ui) {
 				$(ui.item.find(".card-detail")).toggleClass('dragged');
 			},
 
 			receive: function (event, ui) {
+				// var cardID = ui.item.data('id');
+				// var movedCard = Trellino.Cards.get(cardID);
 
 			},
 
 			stop: function (event, ui) {
 				$(ui.item.find(".card-detail")).toggleClass('dragged');
-			}
+			},
+
+			update: function (event, ui) {
+				var listIdArray = $(event.target).sortable('toArray', {attribute: 'id'});
+				that.updateRanks(listIdArray);
+
+			},
 
 		});
 
-		$(".lists").sortable();
+		this.$(".lists").sortable({
+
+			start: function (event, ui) {
+				$(ui.item.find(".list-detail")).toggleClass('dragged');
+			},
+
+			receive: function (event, ui) {
+				
+
+			},
+
+			stop: function (event, ui) {
+				$(ui.item.find(".list-detail")).toggleClass('dragged');
+			},
+
+			update: function (event, ui) {
+				var listIdArray = $(event.target).sortable('toArray', {attribute: 'id'});
+				that.updateRanks(listIdArray);
+			},
+
+		});
 
 		return this;
+	},
+
+	updateRanks: function(ids) {
+		var rank = 0;
+		_.each(ids, function (id) {
+			console.log(id);
+			// console.log(id);
+			debugger
+		})
 	},
 
 });
